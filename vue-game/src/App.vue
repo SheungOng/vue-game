@@ -1,15 +1,23 @@
 <template>
-  <GameWorld title="Welcome to Your Game World App"/>
+  <div id="app">
+    <h1 class="mb-5">Game Title</h1>
+    <v-button :onClick="logClick">Start Game</v-button>
+  </div>
 </template>
 
 <script>
-import GameWorld from './components/GameWorld.vue';
+import ButtonC from './components/ButtonC';
 
 export default {
   name: 'App',
   components: {
-    GameWorld
-  }
+    'v-button': ButtonC
+  },
+  methods: {
+    logClick() {
+      console.log('Game has started')
+    }
+  },
 }
 </script>
 
