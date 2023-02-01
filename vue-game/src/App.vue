@@ -10,7 +10,7 @@
 import ButtonC from './components/ButtonC';
 import VideoB from './components/VideoB';
 import useSound from 'vue-use-sound';
-import buttonSfx from './assets/soundbyte/243020__plasterbrain__game-start.ogg';
+import buttonSfx from './assets/soundbyte/404772__owlstorm__retro-video-game-sfx-blast-off.wav';
 
 export default {
   name: 'App',
@@ -19,7 +19,7 @@ export default {
     VideoB
   },
   setup() {
-    const [play] = useSound(buttonSfx)
+    let [play] = useSound(buttonSfx, { volume: 0.3 })
 
     return {
       play,
