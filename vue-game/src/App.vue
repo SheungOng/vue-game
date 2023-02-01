@@ -1,21 +1,25 @@
 <template>
   <div id="app">
     <h1 class="mb-5">Game Title</h1>
-    <v-button :onClick="logClick">Start Game</v-button>
+    <v-button :onClick="play">Start Game</v-button>
   </div>
 </template>
 
 <script>
 import ButtonC from './components/ButtonC';
+import useSound from 'vue-use-sound';
+import buttonSfx from './assets/soundbyte/243020__plasterbrain__game-start.ogg';
 
 export default {
   name: 'App',
   components: {
     'v-button': ButtonC
   },
-  methods: {
-    logClick() {
-      console.log('Game has started')
+  setup() {
+    const [play] = useSound(buttonSfx)
+    
+    return {
+      play,
     }
   },
 }
